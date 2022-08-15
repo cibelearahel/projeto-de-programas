@@ -2,6 +2,18 @@ package JogoAV1;
 
 public class Interface {
 	
+	public static void nomeJogo() {
+		System.out.println("  _________   ____    __   ___      __    __  ____ ____  \r\n"
+	    		+ " / ___/    \\ /    |  /  ] /  _]    |  |__|  |/    |    \\ \r\n"
+	    		+ "(   \\_|  o  )  o  | /  / /  [_     |  |  |  |  o  |  D  )\r\n"
+	    		+ " \\__  |   _/|     |/  / |    _]    |  |  |  |     |    / \r\n"
+	    		+ " /  \\ |  |  |  _  /   \\_|   [_     |  `  '  |  _  |    \\ \r\n"
+	    		+ " \\    |  |  |  |  \\     |     |     \\      /|  |  |  .  \\\r\n"
+	    		+ "  \\___|__|  |__|__|\\____|_____|      \\_/\\_/ |__|__|__|\\_|");
+	    System.out.println();
+	    System.out.println();
+	}
+	
 	public static void inicializaEspaco(int[][] espaco){
         for(int linha=0 ; linha < 10 ; linha++ )
             for(int coluna=0 ; coluna < 10 ; coluna++ )

@@ -11,9 +11,11 @@ public class Principal {
 	    int hp = 100;
 	    int tentativas=1;
 	    int[] mov = new int[2];
+	    int[][] salvar = new int[1][2];
 
-	    
 	    Jogador.iniciaJogador(jogador);
+	    Jogador.obterPosicaoDoJogador(jogador,salvar);
+	    Interface.nomeJogo();
 	    
 	    do{
 	    	System.out.println("VIDAS:"+ vidas + "\t\t\t\tHP:"+ hp + "\t\t\t\t\tROUND:"+ tentativas);
@@ -25,6 +27,8 @@ public class Principal {
             Inimigo.iniciaInimigo(navee);
             Jogador.movimentar(mov, jogador);
             Jogador.darTiro(tiro);
+            Jogador.tratamentoDasBordas(jogador,salvar);
+            Jogador.obterPosicaoDoJogador(jogador,salvar);
             tentativas++;
             Inimigo.acertou(tiro,navee);
             Jogador.colidiu(navee,jogador);

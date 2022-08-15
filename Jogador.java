@@ -30,6 +30,21 @@ public class Jogador {
         }
     }
 	
+	public static void tratamentoDasBordas(int [][]jogador, int [][]salvar) {
+		
+		if (jogador [0][1] == 10|| jogador[0][0] == 10) {
+			System.out.println("Cuidado!Vc quase saiu do tabuleiro!!");
+			jogador[0][0] = salvar[0][0];
+			jogador[0][1] = salvar[0][1];
+		}
+	}
+	
+	public static void obterPosicaoDoJogador(int [][]jogador, int[][]salvar) {
+		salvar [0][1] = jogador [0][1];
+		salvar [0][0] = jogador [0][0];
+		
+	}
+	
 	public static void darTiro(int[] tiro){
         Scanner entrada = new Scanner(System.in);
         System.out.println();
