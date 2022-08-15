@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Jogador {
 	
+	static int vidas =3;
+	
 	public static void iniciaJogador(int[][] jogador){
 	    jogador[0][0]=9;
 	    jogador[0][1]=4;
@@ -15,7 +17,7 @@ public class Jogador {
         System.out.println();
         System.out.println();
         
-        System.out.print("Mover para: ");
+        System.out.print("Mover jogador para: ");
         mov[0] = entrada.nextInt();
         
         if(mov[0]==8){
@@ -33,7 +35,7 @@ public class Jogador {
 	public static void tratamentoDasBordas(int [][]jogador, int [][]salvar) {
 		
 		if (jogador [0][1] == 10|| jogador[0][0] == 10) {
-			System.out.println("Cuidado!! Você quase saiu do tabuleiro!!");
+			System.out.println("Cuidado!! Você quase saiu do espaço!!");
 			jogador[0][0] = salvar[0][0];
 			jogador[0][1] = salvar[0][1];
 		}
@@ -48,7 +50,7 @@ public class Jogador {
 	public static void darTiro(int[] tiro){
         Scanner entrada = new Scanner(System.in);
         System.out.println();
-        System.out.println("Digite as coordenadas do tiro!!!");
+        System.out.println("Digite as coordenadas do tiro:");
         
         System.out.print("Linha: ");
         tiro[0] = entrada.nextInt();
@@ -63,11 +65,13 @@ public class Jogador {
 	public static void colidiu(int[][] navee, int[][] jogador){
 		int jog = 0;
 		int nave =0;
-		int vidas =3;
+		
             if(navee[nave][0]==jogador[jog][0] && navee[nave][1]==jogador[jog][1]){
                 System.out.printf("Você colidiu com o inimigo (%d,%d)\n",navee[nave][0]+1,navee[nave][1]+1);
                 vidas-=1;
-                System.out.println(vidas);
+                System.out.println("Sua nave colidiu com a do inimigo :(\n"+vidas);
+            }else {
+            	System.out.println("VIDAS:"+ vidas);
             }
     }
 }
